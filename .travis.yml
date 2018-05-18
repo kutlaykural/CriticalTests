@@ -9,3 +9,6 @@ install:
   - npm install
 script:
   - $(npm bin)/cypress run --record
+notifications:
+  email:
+    - mustafaaykutural@gmail.com
