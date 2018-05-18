@@ -44,7 +44,7 @@ describe('Unassigned documents widget', function () {
 		})
 	})
 
-	it('Click on Assign all. It should take you the to Upload Documents page where the first document is displayed and you are able to go through the other unassigned documents', function () {
+	it.skip('Click on Assign all. It should take you the to Upload Documents page where the first document is displayed and you are able to go through the other unassigned documents', function () {
 
 		//cy.visit('/enterprise/dashboard')
 		cy.get('[href="/enterprise/dashboard/documents/unprocessed?assign=all"]', { timeout: 20000 }).click()//find and click "assign all" button
