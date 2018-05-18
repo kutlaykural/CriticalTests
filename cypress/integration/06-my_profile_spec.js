@@ -15,7 +15,7 @@ describe('My Profile', function () {
             cy.get('[class="widget__list-item js-passport"]', { timeout: 20000 }).find('[class="fa fa-times-circle fa-lg text-danger"]')
                 .should("be.visible")//assume that passport document is missing with red X icon
             cy.contains("Complete profile").click()//click "Complete profile" button
-            cy.get('.bg--athens-gray > :nth-child(2) > div', { timeout: 20000 })// wait for page load with tab navigator  
+            cy.get('.bg--athens-gray > :nth-child(2) > div', { timeout: 30000 })// wait for page load with tab navigator  
             cy.contains("a", "Documents").click()// click "Documents" tab link
             //cy.drop_file('upload.jpg', '[class="col-xs-12 col-sm-6 col-md-4 col-lg-3"] ', "image/jpeg", this.dropEvent);// //DROP DOES  NOT WORK
             cy.upload_file('upload.jpg', 'input[type="file"]');
@@ -34,9 +34,9 @@ describe('My Profile', function () {
                     .click({ force: true })//select gender from opened list
                 cy.get('input[name="number"]').type("12345", { force: true })//type something to passport no field
                 cy.get('input[name="dateBirthFormatted"]')
-                    .clear().type(employeefullJSON.birthDate)
+                    .clear({ force: true }).type(employeefullJSON.birthDate,{ force: true })
                 cy.get('input[name="expiryDateFormatted"]')
-                    .clear().type(Cypress.moment().add(10, 'day').format("DD/MM/YYYY"))
+                    .clear({ force: true }).type(Cypress.moment().add(10, 'day').format("DD/MM/YYYY"),{ force: true })
             })
             cy.get(':nth-child(1) > [type="submit"]').click({ force: true })//click submit button to assign document
             cy.get('[class="alert alert-success active ember-view"]', { timeout: 10000 }).should('be.visible')//document should be successfully assigned
