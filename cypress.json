@@ -2,8 +2,7 @@
  "env": {
     "username": "admin@bayzat.com",
     "password": "masiakla",
-    "session_name": "bayzat_session",
-    "host_with_credentials": "https://bayzat:bayzmeat@mridul.bayz.at"
+    "session_name": "bayzat_session"
   },
    "projectId": "71byc2"
 }
